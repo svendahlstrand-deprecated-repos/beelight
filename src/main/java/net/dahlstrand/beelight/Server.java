@@ -6,7 +6,6 @@ import net.dahlstrand.cleware.TrafficLight;
 import net.dahlstrand.supportbee.InboxStatus;
 
 import static net.dahlstrand.cleware.Color.*;
-import static net.dahlstrand.supportbee.InboxStatus.*;
 
 public class Server {
   public static void main(String[] args) throws InterruptedException, NoTrafficLightFoundException, UnirestException {

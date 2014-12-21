@@ -1,8 +1,8 @@
 package net.dahlstrand.cleware;
 
 public enum State {
-  OFF (0x0),
-  ON (0x1);
+  OFF(0x0),
+  ON(0x1);
 
   private final byte byteValue;
 

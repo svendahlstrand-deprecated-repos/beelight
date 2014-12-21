@@ -5,7 +5,6 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import org.json.JSONArray;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -38,8 +37,7 @@ public enum InboxStatus {
           }
         }
         return TICKETS;
-      }
-      else {
+      } else {
         return EMPTY;
       }
     } catch (UnirestException e) {
@@ -54,7 +52,8 @@ public enum InboxStatus {
       FileInputStream file = new FileInputStream("config/application.properties");
       properties.load(file);
       file.close();
-    } catch (IOException e) {}
+    } catch (IOException e) {
+    }
 
     return properties;
   }

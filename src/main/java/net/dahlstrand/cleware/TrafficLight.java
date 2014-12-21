@@ -54,7 +54,7 @@ public class TrafficLight {
         manager = HIDManager.getInstance();
         instance = new TrafficLight(manager.openById(VENDOR_ID, PRODUCT_ID, null));
       } catch (IOException e) {
-        throw(new NoTrafficLightFoundException(e));
+        throw (new NoTrafficLightFoundException(e));
       } finally {
         if (manager != null) {
           manager.release();
@@ -67,9 +67,9 @@ public class TrafficLight {
 
   private void write(Color color, State state) throws NoTrafficLightFoundException {
     try {
-      device.write(new byte[] { ZERO, ZERO, color.getByteValue(), state.getByteValue() });
+      device.write(new byte[]{ZERO, ZERO, color.getByteValue(), state.getByteValue()});
     } catch (IOException e) {
-      throw(new NoTrafficLightFoundException(e));
+      throw (new NoTrafficLightFoundException(e));
     }
   }
 }
