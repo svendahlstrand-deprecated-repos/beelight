@@ -33,6 +33,18 @@ public class TrafficLight {
     write(color, State.ON);
   }
 
+  public void blink(Color color) throws NoTrafficLightFoundException {
+    try {
+      for (int i = 0; i < 2; i++) {
+        on(color);
+        Thread.sleep(500);
+        off();
+        Thread.sleep(500);
+      }
+    } catch (InterruptedException e) {
+    }
+  }
+
   public static TrafficLight getInstance() throws NoTrafficLightFoundException {
     if (instance == null) {
       ClassPathLibraryLoader.loadNativeHIDLibrary();
