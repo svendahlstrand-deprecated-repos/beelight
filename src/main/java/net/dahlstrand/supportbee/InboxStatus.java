@@ -3,6 +3,7 @@ package net.dahlstrand.supportbee;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -41,6 +42,8 @@ public enum InboxStatus {
         return EMPTY;
       }
     } catch (UnirestException e) {
+      return NO_CONTACT;
+    } catch (JSONException e) {
       return NO_CONTACT;
     }
   }
